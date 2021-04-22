@@ -21,6 +21,7 @@ struct Annotation: Codable {
   var rating: Double?
   var lat: Double?
   var long: Double?
+  var rdpImage: String?
 
   enum CodingKeys: String, CodingKey {
     case id
@@ -32,5 +33,6 @@ struct Annotation: Codable {
     case rating
     case lat
     case long
+    case rdpImage = "rdp_image"
   }
 }

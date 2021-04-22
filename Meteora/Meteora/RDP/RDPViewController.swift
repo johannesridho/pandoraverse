@@ -46,6 +46,6 @@ class RDPViewController: UIViewController {
     guard let annotation = annotation else {
       return
     }
-
+    rdpImageView.image = UIImage(named: annotation.annotation.rdpImage ?? "") ?? UIImage(named: "circlepanda")
   }
 }

@@ -138,7 +138,6 @@ class VendorPopupView: UIView {
       options: [],
       completed: nil
     )
-    vendorImageView.contentMode = .scaleAspectFill
     vendorImageView.layer.cornerRadius = 8
     vendorImageView.layer.masksToBounds = true
   }

@@ -20,21 +20,16 @@ class Repository: NSObject {
   private let altitudeDelta: Double = 0
 
   func fetchAnnotations() -> [ARAnnotation] {
-    fetchLocalAnnotations()
+//    fetchLocalAnnotations()
+    generateAroundAnnotations()
   }
 
   func fetchLocalAnnotationModels() -> [Annotation] {
     guard let url = Bundle.main.url(forResource: "annotations", withExtension: "json") else {
       return [Annotation]()
     }
-
     guard let data = try? Data(contentsOf: url) else {
       return [Annotation]()
-    }
-    do {
-      try JSONDecoder().decode(Annotations.self, from: data)
-    } catch {
-      print(error.localizedDescription)
     }
     guard let annotations = try? JSONDecoder().decode(Annotations.self, from: data) else {
       return [Annotation]()
