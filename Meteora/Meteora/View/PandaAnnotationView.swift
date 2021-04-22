@@ -78,6 +78,10 @@ open class PandaAnnotationView: ARAnnotationView, UIGestureRecognizerDelegate {
     } else {
       ratingView.isHidden = true
     }
+    let distance = annotation.distanceFromUser > 1000
+      ? String(format: "%.1fkm", annotation.distanceFromUser / 1000)
+      : String(format: "%.0fm", annotation.distanceFromUser)
+    discountLabel.text = distance
   }
 
   @objc func tapGesture() {
