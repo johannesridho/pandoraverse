@@ -149,7 +149,7 @@ extension MeteoraViewController: VendorPopupViewControllerDelegate {
       arViewController.setAnnotations(arViewController.getAnnotations().filter { ($0 as! PandaAnnotation).annotation.id == viewModel.vendorId })
     } else {
       isFocusMode = false
-      arViewController.setAnnotations(arViewController.getAnnotations())
+      arViewController.setAnnotations(Repository.shared.fetchAnnotations())
     }
   }
 }
