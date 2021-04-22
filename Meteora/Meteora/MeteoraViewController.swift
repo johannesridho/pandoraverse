@@ -56,7 +56,7 @@ class MeteoraViewController: UIViewController {
     arViewController.dataSource = self
     // Debugging
     arViewController.uiOptions.debugLabel = false
-    arViewController.uiOptions.debugMap = true
+    arViewController.uiOptions.debugMap = false
     arViewController.uiOptions.simulatorDebugging = Platform.isSimulator
     arViewController.uiOptions.setUserLocationToCenterOfAnnotations = Platform.isSimulator
     // Interface orientation

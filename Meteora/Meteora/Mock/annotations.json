@@ -6,11 +6,11 @@
       "vendor_description": "$$$ - Burgers, American",
       "image": "https://images.deliveryhero.io/image/fd-sg/LH/g1gq-listing.jpg?width=400&height=292",
       "rating": 4.5,
-      "discount": 0.1,
-      "discount_description": "CORPORATE EXCLUSIVE DISCOUNT - Corporate clients enjoy 10% off on every order above $50",
+      "discount": 0.3,
+      "discount_description": "enjoy 10% off on every order above $50",
       "rdp_image": "rdp_three_buns",
-      "lat": 1.288588,
-      "long": 103.8379882
+      "lat": 1.2906741213443462,
+      "long": 103.83949842580296
     },
     {
       "id": "2",
@@ -19,10 +19,58 @@
       "image": "https://images.deliveryhero.io/image/fd-sg/LH/v8vu-listing.jpg?width=400&height=292",
       "rating": 4.5,
       "discount": 0.1,
+      "discount_description": "enjoy 10% off on every order above $50",
+      "rdp_image": "rdp_super_loco",
+      "lat": 1.2901107,
+      "long": 103.8393879
+    },
+    {
+      "id": "3",
+      "vendor": "McDonalds",
+      "vendor_description": "$$ - Burgers, American",
+      "image": "https://images.deliveryhero.io/image/fd-sg/LH/n7gu-listing.jpg?width=400&height=292",
+      "rating": 4,
+      "discount": 0.2,
       "discount_description": "CORPORATE EXCLUSIVE DISCOUNT - Corporate clients enjoy 10% off on every order above $50",
       "rdp_image": "rdp_super_loco",
-      "lat": 1.2901307,
-      "long": 103.8393979
-    }
+      "lat": 1.2901112,
+      "long": 103.8393582
+    },
+    {
+      "id": "4",
+      "vendor": "Pizza Hut",
+      "vendor_description": "$$$ - Sandwich, American",
+      "image": "https://images.deliveryhero.io/image/fd-sg/LH/w9gn-listing.jpg?width=400&height=292",
+      "rating": 4,
+      "discount": 0.3,
+      "discount_description": "CORPORATE EXCLUSIVE DISCOUNT - Corporate clients enjoy 10% off on every order above $50",
+      "rdp_image": "rdp_super_loco",
+      "lat": 1.3001219,
+      "long": 103.8393474
+    },
+    {
+      "id": "5",
+      "vendor": "Wendys",
+      "vendor_description": "$$$ - Burgers, American",
+      "image": "https://images.deliveryhero.io/image/fd-sg/LH/x6kf-listing.jpg?width=400&height=292",
+      "rating": 4,
+      "discount": 0.2,
+      "discount_description": "CORPORATE EXCLUSIVE DISCOUNT - Corporate clients enjoy 10% off on every order above $50",
+      "rdp_image": "rdp_super_loco",
+      "lat": 1.2961325,
+      "long": 103.6393961
+    },
+    {
+      "id": "6",
+      "vendor": "The Book Cafe",
+      "vendor_description": "$$$$ - Coffee, Halal",
+      "image": "https://images.deliveryhero.io/image/fd-sg/LH/v8zm-listing.jpg?width=400&height=292",
+      "rating": 5,
+      "discount": 0.2,
+      "discount_description": "CORPORATE EXCLUSIVE DISCOUNT - Corporate clients enjoy 10% off on every order above $50",
+      "rdp_image": "rdp_super_loco",
+      "lat": 1.2913364123938869,
+      "long": 103.8388503374415
+    },
   ]
 }

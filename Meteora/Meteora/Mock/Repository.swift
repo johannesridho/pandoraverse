@@ -20,7 +20,7 @@ class Repository: NSObject {
   private let altitudeDelta: Double = 0
 
   func fetchAnnotations() -> [ARAnnotation] {
-    generateAroundAnnotations()
+    fetchLocalAnnotations()
   }
 
   func fetchLocalAnnotationModels() -> [Annotation] {
