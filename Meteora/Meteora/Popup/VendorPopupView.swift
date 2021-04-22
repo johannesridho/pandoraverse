@@ -93,7 +93,7 @@ class VendorPopupView: UIView {
     buttonSecondary.layer.borderWidth = 1
     buttonSecondary.layer.borderColor = primaryColor.cgColor
     buttonSecondary.backgroundColor = .white
-    buttonSecondary.setTitle("Navigate", for: .normal)
+    buttonSecondary.setTitle("Focus", for: .normal)
     buttonSecondary.setTitleColor(primaryColor, for: .normal)
     buttonSecondary.addTarget(self, action: #selector(buttonSecondaryTapped), for: .touchUpInside)
 
