@@ -32,9 +32,3 @@ struct Annotation: Codable {
     case long
   }
 }
-
-extension Annotation {
-  func mapToViewModel() -> VendorPopupViewModel {
-    return VendorPopupViewModel(vendorId: "1", vendorName: vendor, vendorImageUrl: image ?? "", rating: rating ?? 0, vendorDescription: vendorDescription, activeDeals: discountDescription)
-  }
-}

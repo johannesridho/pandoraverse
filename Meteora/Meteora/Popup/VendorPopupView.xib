@@ -42,7 +42,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xgg-pp-LoB">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circlepanda" translatesAutoresizingMaskIntoConstraints="NO" id="Xgg-pp-LoB">
                     <rect key="frame" x="16" y="97" width="382" height="240"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="240" id="Khj-yI-ycZ"/>
@@ -135,4 +135,7 @@
             <point key="canvasLocation" x="53.623188405797109" y="132.92410714285714"/>
         </view>
     </objects>
+    <resources>
+        <image name="circlepanda" width="49" height="50"/>
+    </resources>
 </document>

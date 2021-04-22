@@ -29,7 +29,7 @@ class PandaAnnotation: ARAnnotation, RadarAnnotation {
     super.init(identifier: nil, title: annotation.vendor, location: location)
   }
 
-  var vendor: String? {
+  var vendor: String {
     annotation.vendor
   }
 
@@ -44,4 +44,6 @@ class PandaAnnotation: ARAnnotation, RadarAnnotation {
   var rating: Double? {
     return annotation.rating
   }
+
+  
 }

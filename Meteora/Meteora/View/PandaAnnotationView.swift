@@ -11,7 +11,7 @@ import HDAugmentedReality
 import UIKit
 
 protocol PandaAnnotationViewDelegate: AnyObject {
-  func onTapped(annotation: Annotation)
+  func onTapped(_ annotation: PandaAnnotation)
 }
 
 open class PandaAnnotationView: ARAnnotationView, UIGestureRecognizerDelegate {
@@ -85,8 +85,10 @@ open class PandaAnnotationView: ARAnnotationView, UIGestureRecognizerDelegate {
   }
 
   @objc func tapGesture() {
-    guard let annotation = annotation as? PandaAnnotation else { return }
-    delegate?.onTapped(annotation: annotation.annotation)
+    guard let annotation = annotation as? PandaAnnotation else {
+      return
+    }
+    delegate?.onTapped(annotation)
   }
 }
 

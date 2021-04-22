@@ -1,16 +1,22 @@
 PODS:
   - HDAugmentedReality (3.0.0)
+  - SDWebImage (5.11.0):
+    - SDWebImage/Core (= 5.11.0)
+  - SDWebImage/Core (5.11.0)
 
 DEPENDENCIES:
   - HDAugmentedReality (~> 3.0)
+  - SDWebImage (~> 5.0)
 
 SPEC REPOS:
   trunk:
     - HDAugmentedReality
+    - SDWebImage
 
 SPEC CHECKSUMS:
   HDAugmentedReality: ff518e9c08704261b4226ffa820464aa5a9b1626
+  SDWebImage: 7acbb57630ac7db4a495547fb73916ff3e432f6b
 
-PODFILE CHECKSUM: c1b072b0254aca3387d4a3c741a7c8677d6f51ec
+PODFILE CHECKSUM: a40e82156b512448122c0852c49e494271d89481
 
 COCOAPODS: 1.10.1

@@ -15,6 +15,17 @@ struct VendorPopupViewModel {
   let rating: Double
   let vendorDescription: String
   let activeDeals: String
+  let annotation: PandaAnnotation
+
+  init(annotation: PandaAnnotation) {
+    vendorId = "1"
+    vendorName = annotation.vendor
+    rating = annotation.rating ?? 0
+    vendorImageUrl = annotation.annotation.image ?? ""
+    activeDeals = annotation.annotation.discountDescription
+    vendorDescription = annotation.annotation.vendorDescription
+    self.annotation = annotation
+  }
 }
 
 protocol VendorPopupViewDelegate: AnyObject {
@@ -119,7 +130,12 @@ class VendorPopupView: UIView {
     activeDealsDescriptionLabel.font = UIFont.systemFont(ofSize: 14)
     activeDealsDescriptionLabel.textColor = titleColor
 
-    vendorImageView.sd_setImage(with: URL(string: viewModel.vendorImageUrl), completed: nil)
+    vendorImageView.sd_setImage(
+      with: URL(string: viewModel.vendorImageUrl),
+      placeholderImage: UIImage(named: "circlepanda"),
+      options: [],
+      completed: nil
+    )
     vendorImageView.contentMode = .scaleAspectFill
     vendorImageView.layer.cornerRadius = 8
     vendorImageView.layer.masksToBounds = true

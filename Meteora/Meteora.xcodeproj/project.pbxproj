@@ -14,6 +14,8 @@
 		AF7151E5263139FB0016F9ED /* VendorPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7151E4263139FB0016F9ED /* VendorPopupView.swift */; };
 		AF7151EB263140420016F9ED /* VendorPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7151E9263140420016F9ED /* VendorPopupViewController.swift */; };
 		AF7151EC263140420016F9ED /* VendorPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF7151EA263140420016F9ED /* VendorPopupViewController.xib */; };
+		BF56E57F26317D0F00ECD2AE /* RDPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56E57D26317D0F00ECD2AE /* RDPViewController.swift */; };
+		BF56E58026317D0F00ECD2AE /* RDPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF56E57E26317D0F00ECD2AE /* RDPViewController.xib */; };
 		BFEA9B142630EF81002434E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA9B132630EF81002434E9 /* AppDelegate.swift */; };
 		BFEA9B162630EF81002434E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA9B152630EF81002434E9 /* SceneDelegate.swift */; };
 		BFEA9B182630EF81002434E9 /* MeteoraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA9B172630EF81002434E9 /* MeteoraViewController.swift */; };
@@ -69,6 +71,8 @@
 		AF7151E9263140420016F9ED /* VendorPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorPopupViewController.swift; sourceTree = "<group>"; };
 		AF7151EA263140420016F9ED /* VendorPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VendorPopupViewController.xib; sourceTree = "<group>"; };
 		B4326837DAA90A35FD2A841C /* Pods-Meteora.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meteora.debug.xcconfig"; path = "Target Support Files/Pods-Meteora/Pods-Meteora.debug.xcconfig"; sourceTree = "<group>"; };
+		BF56E57D26317D0F00ECD2AE /* RDPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDPViewController.swift; sourceTree = "<group>"; };
+		BF56E57E26317D0F00ECD2AE /* RDPViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RDPViewController.xib; sourceTree = "<group>"; };
 		BF889DB1E42F71A00A005EC2 /* Pods-Meteora.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meteora.release.xcconfig"; path = "Target Support Files/Pods-Meteora/Pods-Meteora.release.xcconfig"; sourceTree = "<group>"; };
 		BFEA9B102630EF81002434E9 /* Meteora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meteora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFEA9B132630EF81002434E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +162,15 @@
 			path = Popup;
 			sourceTree = "<group>";
 		};
+		BF56E56C26317C2900ECD2AE /* RDP */ = {
+			isa = PBXGroup;
+			children = (
+				BF56E57D26317D0F00ECD2AE /* RDPViewController.swift */,
+				BF56E57E26317D0F00ECD2AE /* RDPViewController.xib */,
+			);
+			path = RDP;
+			sourceTree = "<group>";
+		};
 		BFEA9B072630EF81002434E9 = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +206,7 @@
 				BFEA9B1E2630EF82002434E9 /* LaunchScreen.storyboard */,
 				BFEA9B212630EF82002434E9 /* Info.plist */,
 				AF7151DE263133C40016F9ED /* Popup */,
+				BF56E56C26317C2900ECD2AE /* RDP */,
 				BFEA9B9F26311940002434E9 /* Mock */,
 				BFEA9B9626311187002434E9 /* View */,
 				BFEA9BA926311A02002434E9 /* Model */,
@@ -387,6 +401,7 @@
 				AF7151EC263140420016F9ED /* VendorPopupViewController.xib in Resources */,
 				BFEA9B1B2630EF81002434E9 /* Main.storyboard in Resources */,
 				BFEA9B6926310E4A002434E9 /* Test.storyboard in Resources */,
+				BF56E58026317D0F00ECD2AE /* RDPViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +536,7 @@
 				BFEA9B142630EF81002434E9 /* AppDelegate.swift in Sources */,
 				BFEA9B982631119C002434E9 /* PandaAnnotationView.swift in Sources */,
 				BFEA9B8F2631115E002434E9 /* PandaAnnotation.swift in Sources */,
+				BF56E57F26317D0F00ECD2AE /* RDPViewController.swift in Sources */,
 				BFEA9BAB26311A1E002434E9 /* Annotation.swift in Sources */,
 				BFEA9B7326310E5E002434E9 /* TestViewController.swift in Sources */,
 				BFEA9B162630EF81002434E9 /* SceneDelegate.swift in Sources */,
