@@ -28,6 +28,10 @@
 		BFEA9B7326310E5E002434E9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA9B7226310E5E002434E9 /* TestViewController.swift */; };
 		BFEA9B8F2631115E002434E9 /* PandaAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA9B8E2631115E002434E9 /* PandaAnnotation.swift */; };
 		BFEA9B982631119C002434E9 /* PandaAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA9B972631119C002434E9 /* PandaAnnotationView.swift */; };
+		BFEA9BA226311986002434E9 /* annotations.json in Resources */ = {isa = PBXBuildFile; fileRef = BFEA9BA126311986002434E9 /* annotations.json */; };
+		BFEA9BAB26311A1E002434E9 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA9BAA26311A1E002434E9 /* Annotation.swift */; };
+		BFEA9BB326311A32002434E9 /* PandaAnnotationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA9BB226311A32002434E9 /* PandaAnnotationViewModel.swift */; };
+		BFEA9BB926311AA9002434E9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA9BB826311AA9002434E9 /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,10 @@
 		BFEA9B7226310E5E002434E9 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		BFEA9B8E2631115E002434E9 /* PandaAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaAnnotation.swift; sourceTree = "<group>"; };
 		BFEA9B972631119C002434E9 /* PandaAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaAnnotationView.swift; sourceTree = "<group>"; };
+		BFEA9BA126311986002434E9 /* annotations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = annotations.json; sourceTree = "<group>"; };
+		BFEA9BAA26311A1E002434E9 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		BFEA9BB226311A32002434E9 /* PandaAnnotationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaAnnotationViewModel.swift; sourceTree = "<group>"; };
+		BFEA9BB826311AA9002434E9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		C4350494392017603608BD7F /* Pods_Meteora_MeteoraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meteora_MeteoraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -160,7 +168,9 @@
 				BFEA9B1C2630EF82002434E9 /* Assets.xcassets */,
 				BFEA9B1E2630EF82002434E9 /* LaunchScreen.storyboard */,
 				BFEA9B212630EF82002434E9 /* Info.plist */,
+				BFEA9B9F26311940002434E9 /* Mock */,
 				BFEA9B9626311187002434E9 /* View */,
+				BFEA9BA926311A02002434E9 /* Model */,
 				BFEA9B6726310E2B002434E9 /* Test */,
 			);
 			path = Meteora;
@@ -200,8 +210,26 @@
 			isa = PBXGroup;
 			children = (
 				BFEA9B972631119C002434E9 /* PandaAnnotationView.swift */,
+				BFEA9BB226311A32002434E9 /* PandaAnnotationViewModel.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BFEA9B9F26311940002434E9 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				BFEA9BA126311986002434E9 /* annotations.json */,
+				BFEA9BB826311AA9002434E9 /* Repository.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		BFEA9BA926311A02002434E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BFEA9BAA26311A1E002434E9 /* Annotation.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C23CC539C8CDA139DF01DE2D /* Frameworks */ = {
@@ -327,6 +355,7 @@
 			files = (
 				BFEA9B202630EF82002434E9 /* LaunchScreen.storyboard in Resources */,
 				BFEA9B1D2630EF82002434E9 /* Assets.xcassets in Resources */,
+				BFEA9BA226311986002434E9 /* annotations.json in Resources */,
 				BFEA9B1B2630EF81002434E9 /* Main.storyboard in Resources */,
 				BFEA9B6926310E4A002434E9 /* Test.storyboard in Resources */,
 			);
@@ -462,9 +491,12 @@
 				BFEA9B142630EF81002434E9 /* AppDelegate.swift in Sources */,
 				BFEA9B982631119C002434E9 /* PandaAnnotationView.swift in Sources */,
 				BFEA9B8F2631115E002434E9 /* PandaAnnotation.swift in Sources */,
+				BFEA9BAB26311A1E002434E9 /* Annotation.swift in Sources */,
 				BFEA9B7326310E5E002434E9 /* TestViewController.swift in Sources */,
 				BFEA9B162630EF81002434E9 /* SceneDelegate.swift in Sources */,
 				BFEA9B6E26310E52002434E9 /* StackTestViewController.swift in Sources */,
+				BFEA9BB326311A32002434E9 /* PandaAnnotationViewModel.swift in Sources */,
+				BFEA9BB926311AA9002434E9 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

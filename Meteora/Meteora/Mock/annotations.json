@@ -1,0 +1,17 @@
+{
+  "annotations": [
+    {
+      "name": "restaurant name",
+      "lat": 1.123,
+      "long": 103.332,
+      "rating": 4,
+      "discount": "10%",
+    }, {
+      "name": "restaurant 2",
+      "lat": 1.223,
+      "long": 103.432,
+      "rating": 3,
+      "discount": "40%",
+    }
+  ]
+}

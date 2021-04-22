@@ -5,46 +5,51 @@
 //  Created by Phuong Vo on 22/4/21.
 //
 
-import UIKit
 import CoreLocation
 import HDAugmentedReality
+import UIKit
 
 class PandaAnnotation: ARAnnotation, RadarAnnotation {
-  var type: PandaAnnotationType
+    private(set) var type: PandaAnnotationType
+    private var annotation: Annotation
+    private let altitudeDelta: Double = 0
 
-  public init?(
-    identifier: String?,
-    title: String?,
-    location: CLLocation,
-    type: PandaAnnotationType = .default
-  ) {
-    self.type = type
-    super.init(identifier: identifier, title: title, location: location)
-  }
+    public init?(
+        annotation: Annotation,
+        type: PandaAnnotationType = .default
+    ) {
+        self.type = type
+        self.annotation = annotation
 
-  public var radarAnnotationTintColor: UIColor? {
-    return self.type.tintColor
-  }
+        let location = CLLocation(
+            coordinate: CLLocationCoordinate2D(latitude: annotation.lat, longitude: annotation.long),
+            altitude: altitudeDelta * drand48(), // TODO: check again
+            horizontalAccuracy: 1,
+            verticalAccuracy: 1,
+            course: 0,
+            speed: 0,
+            timestamp: Date()
+        )
+        super.init(identifier: nil, title: annotation.name, location: location)
+    }
 
+    public var radarAnnotationTintColor: UIColor? {
+        return type.tintColor
+    }
 }
 
-/// This is just test data, in a normal project you would probably get annotation data in json format from some external service.
-enum PandaAnnotationType: CaseIterable
-{
-  case `default`
+enum PandaAnnotationType: CaseIterable {
+    case `default`
 
-  var icon: UIImage?
-  {
-    UIImage(named: "circlepanda")
-  }
+    var icon: UIImage? {
+        UIImage(named: "circlepanda")
+    }
 
-  var title: String?
-  {
-    ""
-  }
+    var title: String {
+        "Panda"
+    }
 
-  var tintColor: UIColor
-  {
-    .clear
-  }
+    var tintColor: UIColor {
+        .clear
+    }
 }

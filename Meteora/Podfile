@@ -16,7 +16,6 @@ target 'Meteora' do
     # Pods for testing
   end
 
-pod 'lottie-ios'
 pod 'HDAugmentedReality', '~> 3.0'
 
 end
