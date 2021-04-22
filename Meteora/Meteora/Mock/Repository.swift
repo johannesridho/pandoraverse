@@ -39,8 +39,8 @@ class Repository: NSObject {
     }
 
     func generateAnnotationAround() -> [ARAnnotation] {
-        let lat = 1.296747
-        let lon = 103.834891
+        let lat = 1.2918981
+        let lon = 103.8382425
         let deltaLat = 0.2 // Area in which to generate annotations
         let deltaLon = 0.2 // Area in which to generate annotations
         let annotationCount = 200
