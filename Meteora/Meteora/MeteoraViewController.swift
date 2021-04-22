@@ -112,6 +112,7 @@ class MeteoraViewController: UIViewController {
 extension MeteoraViewController: ARDataSource {
   func ar(_: ARViewController, viewForAnnotation _: ARAnnotation) -> ARAnnotationView {
     let annotationView = PandaAnnotationView()
+    annotationView.delegate = self
     annotationView.frame = CGRect(x: 0, y: 0, width: 150, height: 50)
     return annotationView
   }
@@ -128,5 +129,13 @@ extension MeteoraViewController: ARDataSource {
 
       presentedViewController?.present(alert, animated: true, completion: nil)
     }
+  }
+}
+
+extension MeteoraViewController: PandaAnnotationViewDelegate {
+  func onTapped() {
+    let vc = VendorPopupViewController(viewModel: VendorPopupViewModel(vendorId: "1", vendorName: "asd", vendorImageUrl: "https://cna-sg-res.cloudinary.com/image/upload/q_auto,f_auto/image/7532680/16x9/991/557/ba8499a09032ed6ed3b2b8fa93fd685c/Qk/file-mcdonalds-singapore---3419228.jpg", rating: 12, vendorDescription: "asdads", activeDeals: "sadasd"))
+    vc.modalPresentationStyle = .overCurrentContext
+    presentedViewController?.present(vc, animated: false, completion: nil)
   }
 }

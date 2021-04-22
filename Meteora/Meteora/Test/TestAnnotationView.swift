@@ -125,7 +125,8 @@ open class TestAnnotationView: ARAnnotationView, UIGestureRecognizerDelegate {
     }
 
     @objc open func tapGesture() {
-        guard let annotation = self.annotation, let rootViewController = UIApplication.shared.delegate?.window??.rootViewController else { return }
+      guard let annotation = self.annotation, let rootViewController = UIApplication.shared.windows.first?.rootViewController else { return }
+
 
         let alertController = UIAlertController(title: annotation.title, message: "Tapped", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)

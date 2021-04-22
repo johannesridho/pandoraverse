@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 struct VendorPopupViewModel {
   let vendorId: String
@@ -17,6 +18,7 @@ struct VendorPopupViewModel {
 }
 
 class VendorPopupView: UIView {
+  @IBOutlet var contentView: UIView!
   @IBOutlet weak var closeButton: UIButton!
   @IBOutlet weak var labelPopupTitle: UILabel!
   @IBOutlet weak var vendorImageView: UIImageView!
@@ -30,15 +32,35 @@ class VendorPopupView: UIView {
   @IBOutlet weak var buttonSecondary: UIButton!
   @IBOutlet weak var buttonPrimary: UIButton!
 
-  let titleColor = UIColor(red: 51, green: 51, blue: 51, alpha: 100)
-  let subtitleColor = UIColor(red: 112, green: 112, blue: 112, alpha: 100)
-  let primaryColor = UIColor(red: 215, green: 15, blue: 100, alpha: 100)
+  let titleColor = UIColor(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00)
+  let subtitleColor = UIColor(red: 0.44, green: 0.44, blue: 0.44, alpha: 1.00)
+  let primaryColor = UIColor(red: 0.84, green: 0.06, blue: 0.39, alpha: 1.00)
+
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    commonInit()
+  }
+
+  required init?(coder: NSCoder) {
+    super.init(coder: coder)
+    commonInit()
+  }
+
+  private func commonInit() {
+    Bundle.main.loadNibNamed("VendorPopupView", owner: self, options: nil)
+    addSubview(contentView)
+    contentView.frame = self.bounds
+    contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+
+  }
   override func awakeFromNib() {
     super.awakeFromNib()
     starImageView.image = UIImage(named: "star")
-    closeButton.setImage(UIImage(named: "close-button"), for: .normal)
+    closeButton.setImage(UIImage(named: "close-button")?.withRenderingMode(.alwaysOriginal), for: .normal)
+    closeButton.setTitle(nil, for: .normal)
+    closeButton.titleLabel?.isHidden = true
     labelPopupTitle.text = "Vendor info"
-    labelPopupTitle.font = UIFont.boldSystemFont(ofSize: 14)
+    labelPopupTitle.font = UIFont.boldSystemFont(ofSize: 16)
     labelPopupTitle.textColor = titleColor
     activeDealsLabel.text = "Active deal"
     activeDealsLabel.font = UIFont.boldSystemFont(ofSize: 14)
@@ -68,5 +90,13 @@ class VendorPopupView: UIView {
     ratingLabel.text = viewModel.rating.description
     ratingLabel.font = UIFont.boldSystemFont(ofSize: 14)
     ratingLabel.textColor = titleColor
+    activeDealsDescriptionLabel.text = viewModel.activeDeals
+    activeDealsDescriptionLabel.font = UIFont.systemFont(ofSize: 14)
+    activeDealsDescriptionLabel.textColor = titleColor
+
+    vendorImageView.sd_setImage(with: URL(string: viewModel.vendorImageUrl), completed: nil)
+    vendorImageView.contentMode = .scaleAspectFill
+    vendorImageView.layer.cornerRadius = 8
+    vendorImageView.layer.masksToBounds = true
   }
 }

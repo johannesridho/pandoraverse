@@ -8,35 +8,25 @@
 import UIKit
 
 class VendorPopupViewController: UIViewController {
-  @IBOutlet weak var containerView: UIView!
+  @IBOutlet weak var vendorPopupView: VendorPopupView!
+  var viewModel: VendorPopupViewModel?
   var popupView: VendorPopupView?
-    override func viewDidLoad() {
-      super.viewDidLoad()
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    vendorPopupView.setup(with: viewModel!)
+    vendorPopupView.layer.cornerRadius = 8
+    vendorPopupView.layer.masksToBounds = true
+  }
 
   public init(viewModel: VendorPopupViewModel) {
     super.init(nibName: "VendorPopupViewController", bundle: nil)
-    let view = VendorPopupView()
-    view.setup(with: viewModel)
-    popupView = view
-    setUpConstraints()
+    self.viewModel = viewModel
   }
 
   required init?(coder: NSCoder) {
     super.init(coder: coder)
-    let view = VendorPopupView()
-    popupView = view
-    setUpConstraints()
   }
 
   private func setUpConstraints() {
-    guard let popupView = popupView else { return }
-    containerView.addSubview(popupView)
-    NSLayoutConstraint.activate([
-      view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-      view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
-      view.topAnchor.constraint(equalTo: containerView.topAnchor),
-      view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor),
-    ])
   }
 }

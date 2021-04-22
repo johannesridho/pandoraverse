@@ -10,12 +10,19 @@ import CoreLocation
 import HDAugmentedReality
 import UIKit
 
+protocol PandaAnnotationViewDelegate: AnyObject {
+  func onTapped()
+}
+
 open class PandaAnnotationView: ARAnnotationView, UIGestureRecognizerDelegate {
   open var backgroundImageView: UIImageView?
   open var gradientImageView: UIImageView?
   open var iconImageView: UIImageView?
   open var titleLabel: UILabel?
   open var arFrame = CGRect.zero // Just for test stacking
+
+  weak var delegate: PandaAnnotationViewDelegate?
+
   override open weak var annotation: ARAnnotation? { didSet { self.bindAnnotation() } }
 
   override open func initialize() {
@@ -107,7 +114,7 @@ open class PandaAnnotationView: ARAnnotationView, UIGestureRecognizerDelegate {
   }
 
   @objc func tapGesture() {
-    // TODO: Giogry
+    delegate?.onTapped()
   }
 
   //==========================================================================================================================================================

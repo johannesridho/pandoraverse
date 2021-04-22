@@ -17,5 +17,5 @@ target 'Meteora' do
   end
 
 pod 'HDAugmentedReality', '~> 3.0'
-
+pod 'SDWebImage', '~> 5.0'
 end
