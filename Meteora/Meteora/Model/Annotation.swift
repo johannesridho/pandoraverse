@@ -12,6 +12,7 @@ struct Annotations: Codable {
 }
 
 struct Annotation: Codable {
+  var id: String
   var vendor: String
   var vendorDescription: String
   var image: String?
@@ -22,6 +23,7 @@ struct Annotation: Codable {
   var long: Double?
 
   enum CodingKeys: String, CodingKey {
+    case id
     case vendorDescription = "vendor_description"
     case vendor
     case image

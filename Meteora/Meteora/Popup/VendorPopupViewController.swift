@@ -8,8 +8,13 @@
 import UIKit
 import MapKit
 
+protocol VendorPopupViewControllerDelegate: AnyObject {
+  func onNavigateTapped(viewModel: VendorPopupViewModel)
+}
+
 class VendorPopupViewController: UIViewController {
   @IBOutlet weak var vendorPopupView: VendorPopupView!
+  weak var delegate: VendorPopupViewControllerDelegate?
   var viewModel: VendorPopupViewModel?
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -44,23 +49,9 @@ extension VendorPopupViewController: VendorPopupViewDelegate {
     present(vc, animated: false, completion: nil)
   }
 
-  /// Navigate
-  func onButtonSecondaryTapped() {
-    guard let annotation = viewModel?.annotation else {
-      return
-    }
-
-    let regionDistance: CLLocationDistance = 10000
-    let coordinates = annotation.location.coordinate
-    let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
-    let options = [
-      MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
-      MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
-    ]
-    let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
-    let mapItem = MKMapItem(placemark: placemark)
-    mapItem.name = "\(annotation.vendor)"
-    mapItem.openInMaps(launchOptions: options)
+  func onButtonSecondaryTapped(viewModel: VendorPopupViewModel) {
+    self.dismiss(animated: true, completion: nil)
+    delegate?.onNavigateTapped(viewModel: viewModel)
   }
 
   func onCloseButtonTapped() {

@@ -18,7 +18,7 @@ struct VendorPopupViewModel {
   let annotation: PandaAnnotation
 
   init(annotation: PandaAnnotation) {
-    vendorId = "1"
+    vendorId = annotation.annotation.id
     vendorName = annotation.vendor
     rating = annotation.rating ?? 0
     vendorImageUrl = annotation.annotation.image ?? ""
@@ -30,7 +30,7 @@ struct VendorPopupViewModel {
 
 protocol VendorPopupViewDelegate: AnyObject {
   func onCloseButtonTapped()
-  func onButtonSecondaryTapped()
+  func onButtonSecondaryTapped(viewModel: VendorPopupViewModel)
   func onButtonPrimaryTapped()
 }
 
@@ -50,6 +50,7 @@ class VendorPopupView: UIView {
   @IBOutlet weak var buttonPrimary: UIButton!
 
   weak var delegate: VendorPopupViewDelegate?
+  var viewModel: VendorPopupViewModel?
 
   let titleColor = UIColor(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00)
   let subtitleColor = UIColor(red: 0.44, green: 0.44, blue: 0.44, alpha: 1.00)
@@ -109,7 +110,7 @@ class VendorPopupView: UIView {
   }
 
   @objc func buttonSecondaryTapped() {
-    delegate?.onButtonSecondaryTapped()
+    delegate?.onButtonSecondaryTapped(viewModel: viewModel!)
   }
 
   @objc func buttonClosedTapped() {
@@ -117,6 +118,7 @@ class VendorPopupView: UIView {
   }
 
   func setup(with viewModel: VendorPopupViewModel) {
+    self.viewModel = viewModel
     vendorNameLabel.text = viewModel.vendorName
     vendorNameLabel.font = UIFont.boldSystemFont(ofSize: 14)
     vendorNameLabel.textColor = titleColor

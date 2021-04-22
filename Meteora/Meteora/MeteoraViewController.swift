@@ -11,6 +11,8 @@ import MapKit
 import UIKit
 
 class MeteoraViewController: UIViewController {
+  var isFocusMode: Bool = false
+
   override func viewDidLoad() {
     super.viewDidLoad()
   }
@@ -29,7 +31,6 @@ class MeteoraViewController: UIViewController {
   lazy var arViewController: ARViewController = {
     // Creating ARViewController. You can use ARViewController(nibName:bundle:) if you have custom xib.
     let arViewController = ARViewController()
-
     //===== Presenter - handles visual presentation of annotations
     let presenter = arViewController.presenter!
     // Vertical offset by distance
@@ -37,7 +38,7 @@ class MeteoraViewController: UIViewController {
     presenter.distanceOffsetMultiplier = 0.05 // Pixels per meter
     presenter.distanceOffsetMinThreshold = 1000 // Tell it to not raise annotations that are nearer than this
     // Limiting number of annotations shown for performance
-    presenter.maxDistance = 5000 // Don't show annotations if they are farther than this
+    presenter.maxDistance = 200000000000 // Don't show annotations if they are farther than this
     presenter.maxVisibleAnnotations = 100 // Max number of annotations on the screen
     // Telling it to stack vertically.
     presenter.presenterTransform = ARPresenterStackTransform()
@@ -135,21 +136,20 @@ extension MeteoraViewController: PandaAnnotationViewDelegate {
   func onTapped(_ annotation: PandaAnnotation) {
     let viewModel = VendorPopupViewModel(annotation: annotation)
     let vc = VendorPopupViewController(viewModel: viewModel)
+    vc.delegate = self
     vc.modalPresentationStyle = .overCurrentContext
     presentedViewController?.present(vc, animated: false, completion: nil)
   }
 }
 
-extension MeteoraViewController: VendorPopupViewDelegate {
-  func onButtonPrimaryTapped() {
-
-  }
-
-  func onButtonSecondaryTapped() {
-
-  }
-
-  func onCloseButtonTapped() {
-
+extension MeteoraViewController: VendorPopupViewControllerDelegate {
+  func onNavigateTapped(viewModel: VendorPopupViewModel) {
+    if !isFocusMode {
+      isFocusMode = true
+      arViewController.setAnnotations(arViewController.getAnnotations().filter { ($0 as! PandaAnnotation).annotation.id == viewModel.vendorId })
+    } else {
+      isFocusMode = false
+      arViewController.setAnnotations(arViewController.getAnnotations())
+    }
   }
 }

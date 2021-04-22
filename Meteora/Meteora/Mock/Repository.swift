@@ -20,7 +20,7 @@ class Repository: NSObject {
   private let altitudeDelta: Double = 0
 
   func fetchAnnotations() -> [ARAnnotation] {
-    generateAroundAnnotations()
+    fetchLocalAnnotations()
   }
 
   func fetchLocalAnnotationModels() -> [Annotation] {
@@ -31,7 +31,11 @@ class Repository: NSObject {
     guard let data = try? Data(contentsOf: url) else {
       return [Annotation]()
     }
-
+    do {
+      try JSONDecoder().decode(Annotations.self, from: data)
+    } catch {
+      print(error.localizedDescription)
+    }
     guard let annotations = try? JSONDecoder().decode(Annotations.self, from: data) else {
       return [Annotation]()
     }
@@ -74,7 +78,7 @@ extension Repository {
     var annotationModels = fetchLocalAnnotationModels()
     if annotationModels.count == 0 {
       annotationModels.append(
-        Annotation(vendor: "Empty", vendorDescription: "", image: "", discount: 0, discountDescription: "", rating: 0, lat: 0, long: 0)
+        Annotation(id: "", vendor: "Empty", vendorDescription: "", image: "", discount: 0, discountDescription: "", rating: 0, lat: 0, long: 0)
       )
     }
 
