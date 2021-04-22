@@ -122,8 +122,7 @@ extension TestViewController: ARDataSource {
     /// This method is called by ARViewController, make sure to set dataSource property.
     func ar(_: ARViewController, viewForAnnotation _: ARAnnotation) -> ARAnnotationView {
         // Annotation views should be lightweight views, try to avoid xibs and autolayout all together.
-        let annotationView = PandaAnnotationView()
-//      let annotationView = TestAnnotationView()
+      let annotationView = TestAnnotationView()
         annotationView.frame = CGRect(x: 0, y: 0, width: 150, height: 50)
         return annotationView
     }

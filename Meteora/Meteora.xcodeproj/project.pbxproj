@@ -36,6 +36,8 @@
 		BFEA9BAB26311A1E002434E9 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA9BAA26311A1E002434E9 /* Annotation.swift */; };
 		BFEA9BB326311A32002434E9 /* PandaAnnotationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA9BB226311A32002434E9 /* PandaAnnotationViewModel.swift */; };
 		BFEA9BB926311AA9002434E9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA9BB826311AA9002434E9 /* Repository.swift */; };
+		BFEA9BD72631504C002434E9 /* PandaAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEA9BD62631504C002434E9 /* PandaAnnotationView.xib */; };
+		BFEA9BDF26315C9A002434E9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA9BDE26315C9A002434E9 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 		BFEA9BAA26311A1E002434E9 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		BFEA9BB226311A32002434E9 /* PandaAnnotationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaAnnotationViewModel.swift; sourceTree = "<group>"; };
 		BFEA9BB826311AA9002434E9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		BFEA9BD62631504C002434E9 /* PandaAnnotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PandaAnnotationView.xib; sourceTree = "<group>"; };
+		BFEA9BDE26315C9A002434E9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C4350494392017603608BD7F /* Pods_Meteora_MeteoraUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meteora_MeteoraUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -179,15 +183,16 @@
 		BFEA9B122630EF81002434E9 /* Meteora */ = {
 			isa = PBXGroup;
 			children = (
-				AF7151DE263133C40016F9ED /* Popup */,
 				BFEA9B132630EF81002434E9 /* AppDelegate.swift */,
 				BFEA9B152630EF81002434E9 /* SceneDelegate.swift */,
 				BFEA9B172630EF81002434E9 /* MeteoraViewController.swift */,
 				BFEA9B8E2631115E002434E9 /* PandaAnnotation.swift */,
+				BFEA9BDE26315C9A002434E9 /* Extensions.swift */,
 				BFEA9B192630EF81002434E9 /* Main.storyboard */,
 				BFEA9B1C2630EF82002434E9 /* Assets.xcassets */,
 				BFEA9B1E2630EF82002434E9 /* LaunchScreen.storyboard */,
 				BFEA9B212630EF82002434E9 /* Info.plist */,
+				AF7151DE263133C40016F9ED /* Popup */,
 				BFEA9B9F26311940002434E9 /* Mock */,
 				BFEA9B9626311187002434E9 /* View */,
 				BFEA9BA926311A02002434E9 /* Model */,
@@ -230,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				BFEA9B972631119C002434E9 /* PandaAnnotationView.swift */,
+				BFEA9BD62631504C002434E9 /* PandaAnnotationView.xib */,
 				BFEA9BB226311A32002434E9 /* PandaAnnotationViewModel.swift */,
 			);
 			path = View;
@@ -375,6 +381,7 @@
 			files = (
 				BFEA9B202630EF82002434E9 /* LaunchScreen.storyboard in Resources */,
 				AF7151E0263133DD0016F9ED /* VendorPopupView.xib in Resources */,
+				BFEA9BD72631504C002434E9 /* PandaAnnotationView.xib in Resources */,
 				BFEA9B1D2630EF82002434E9 /* Assets.xcassets in Resources */,
 				BFEA9BA226311986002434E9 /* annotations.json in Resources */,
 				AF7151EC263140420016F9ED /* VendorPopupViewController.xib in Resources */,
@@ -517,6 +524,7 @@
 				BFEA9BAB26311A1E002434E9 /* Annotation.swift in Sources */,
 				BFEA9B7326310E5E002434E9 /* TestViewController.swift in Sources */,
 				BFEA9B162630EF81002434E9 /* SceneDelegate.swift in Sources */,
+				BFEA9BDF26315C9A002434E9 /* Extensions.swift in Sources */,
 				BFEA9B6E26310E52002434E9 /* StackTestViewController.swift in Sources */,
 				BFEA9BB326311A32002434E9 /* PandaAnnotationViewModel.swift in Sources */,
 				BFEA9BB926311AA9002434E9 /* Repository.swift in Sources */,

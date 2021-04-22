@@ -34,10 +34,14 @@ class PandaAnnotation: ARAnnotation, RadarAnnotation {
   }
 
   var image: UIImage? {
-    UIImage(named: annotation.image ?? "circlepanda")
+    UIImage(named: annotation.image ?? "circlepanda") ?? UIImage(named: "circlepanda")
   }
 
   var discount: Double? {
     annotation.discount
+  }
+
+  var rating: Double? {
+    return annotation.rating
   }
 }
