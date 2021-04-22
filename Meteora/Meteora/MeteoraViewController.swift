@@ -19,13 +19,11 @@ class MeteoraViewController: UIViewController {
     showARViewController()
   }
 
-  /// Creates random annotations around predefined center point and presents ARViewController modally
-  func showARViewController()
-  {
+  func showARViewController() {
     let wilmerHouse = CLLocationCoordinate2D(latitude: 1.296687, longitude: 103.835418)
 
     let wilmerHouseLocation = CLLocation(coordinate: wilmerHouse, altitude: 0, horizontalAccuracy: 0, verticalAccuracy: 0, course: 0, speed: 0, timestamp: Date())
-    if let wilmerHouseAnnotation = TestAnnotation(identifier: "wh", title: "wilmerHouse", location: wilmerHouseLocation, type: .library) {
+    if let wilmerHouseAnnotation = PandaAnnotation(identifier: "wh", title: "wilmerHouse", location: wilmerHouseLocation) {
       arViewController.setAnnotations([wilmerHouseAnnotation])
     }
 
@@ -119,18 +117,13 @@ class MeteoraViewController: UIViewController {
 }
 
 // MARK: ARDataSource
-extension MeteoraViewController: ARDataSource
-{
-  /// This method is called by ARViewController, make sure to set dataSource property.
-  func ar(_ arViewController: ARViewController, viewForAnnotation annotation: ARAnnotation) -> ARAnnotationView
-  {
-    // Annotation views should be lightweight views, try to avoid xibs and autolayout all together.
-    let annotationView = TestAnnotationView()
+extension MeteoraViewController: ARDataSource {
+  func ar(_ arViewController: ARViewController, viewForAnnotation annotation: ARAnnotation) -> ARAnnotationView {
+    let annotationView = PandaAnnotationView()
     annotationView.frame = CGRect(x: 0,y: 0,width: 150,height: 50)
     return annotationView;
   }
 
-  /// This can currently only be called because of camera error.
   func ar(_ arViewController: ARViewController, didFailWithError error: Error)
   {
     if let _ = error as? CameraViewError
@@ -146,5 +139,49 @@ extension MeteoraViewController: ARDataSource
 
       self.presentedViewController?.present(alert, animated: true, completion: nil)
     }
+  }
+}
+
+// MARK: Dummy data
+extension MeteoraViewController
+{
+  public class func getDummyAnnotations(centerLatitude: Double, centerLongitude: Double, deltaLat: Double, deltaLon: Double, altitudeDelta: Double, count: Int) -> Array<ARAnnotation>
+  {
+    var annotations: [ARAnnotation] = []
+
+    srand48(2)
+    for i in stride(from: 0, to: count, by: 1)
+    {
+      let location = self.getRandomLocation(centerLatitude: centerLatitude, centerLongitude: centerLongitude, deltaLat: deltaLat, deltaLon: deltaLon, altitudeDelta: altitudeDelta)
+
+      if let annotation = TestAnnotation(identifier: nil, title: "POI \(i)", location: location, type: TestAnnotationType.allCases.randomElement()!)
+      {
+        annotations.append(annotation)
+      }
+    }
+    return annotations
+  }
+
+  func addDummyAnnotation(_ lat: Double,_ lon: Double, altitude: Double, title: String, annotations: inout [ARAnnotation])
+  {
+    let location = CLLocation(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon), altitude: altitude, horizontalAccuracy: 0, verticalAccuracy: 0, course: 0, speed: 0, timestamp: Date())
+    if let annotation = ARAnnotation(identifier: nil, title: title, location: location)
+    {
+      annotations.append(annotation)
+    }
+  }
+
+  public class func getRandomLocation(centerLatitude: Double, centerLongitude: Double, deltaLat: Double, deltaLon: Double, altitudeDelta: Double) -> CLLocation
+  {
+    var lat = centerLatitude
+    var lon = centerLongitude
+
+    let latDelta = -(deltaLat / 2) + drand48() * deltaLat
+    let lonDelta = -(deltaLon / 2) + drand48() * deltaLon
+    lat = lat + latDelta
+    lon = lon + lonDelta
+
+    let altitude = drand48() * altitudeDelta
+    return CLLocation(coordinate: CLLocationCoordinate2D(latitude: lat, longitude: lon), altitude: altitude, horizontalAccuracy: 1, verticalAccuracy: 1, course: 0, speed: 0, timestamp: Date())
   }
 }
