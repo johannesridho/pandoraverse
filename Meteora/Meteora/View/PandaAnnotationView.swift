@@ -64,8 +64,8 @@ open class PandaAnnotationView: ARAnnotationView, UIGestureRecognizerDelegate {
     titleLabel = label
 
     // Gesture
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(TestAnnotationView.tapGesture))
-    addGestureRecognizer(tapGesture)
+    let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+    addGestureRecognizer(tapRecognizer)
 
     // Other
     backgroundColor = UIColor.clear
@@ -106,13 +106,8 @@ open class PandaAnnotationView: ARAnnotationView, UIGestureRecognizerDelegate {
     layoutUi()
   }
 
-  @objc open func tapGesture() {
-    guard let annotation = self.annotation, let rootViewController = UIApplication.shared.delegate?.window??.rootViewController else { return }
-
-    let alertController = UIAlertController(title: annotation.title, message: "Tapped", preferredStyle: .alert)
-    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-    alertController.addAction(action)
-    rootViewController.presentedViewController?.present(alertController, animated: true, completion: nil)
+  @objc func tapGesture() {
+    // TODO: Giogry
   }
 
   //==========================================================================================================================================================
