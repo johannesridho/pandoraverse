@@ -33,8 +33,8 @@ class PandaAnnotation: ARAnnotation, RadarAnnotation {
     annotation.vendor
   }
 
-  var image: UIImage? {
-    UIImage(named: annotation.image ?? "circlepanda") ?? UIImage(named: "circlepanda")
+  var image: String? {
+    annotation.image
   }
 
   var discount: Double? {

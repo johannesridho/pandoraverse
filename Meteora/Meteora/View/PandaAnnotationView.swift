@@ -64,7 +64,13 @@ open class PandaAnnotationView: ARAnnotationView, UIGestureRecognizerDelegate {
           let iconImageView = iconImageView else {
       return
     }
-    iconImageView.image = annotation.image
+    iconImageView.sd_setImage(
+      with: URL(string: annotation.image ?? ""),
+      placeholderImage: UIImage(named: "circlepanda"),
+      options: [],
+      completed: nil
+    )
+
     titleLabel?.text = annotation.vendor
     if let discount = annotation.discount {
       discountLabel.text = "\(Int(discount * 100))%"
