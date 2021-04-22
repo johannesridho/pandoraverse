@@ -112,6 +112,7 @@ class MeteoraViewController: UIViewController {
 extension MeteoraViewController: ARDataSource {
   func ar(_: ARViewController, viewForAnnotation _: ARAnnotation) -> ARAnnotationView {
     let view = PandaAnnotationView.loadFromNib()
+    view.delegate = self
     return view
   }
 
