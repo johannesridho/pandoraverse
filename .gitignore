@@ -88,3 +88,6 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+Meteora/Pods
+Meteora/Meteora.xcworkspace
+Meteora/Meteora.xcodeproj/project.xcworkspace

@@ -1,0 +1,20 @@
+PODS:
+  - HDAugmentedReality (3.0.0)
+  - lottie-ios (3.2.1)
+
+DEPENDENCIES:
+  - HDAugmentedReality (~> 3.0)
+  - lottie-ios
+
+SPEC REPOS:
+  trunk:
+    - HDAugmentedReality
+    - lottie-ios
+
+SPEC CHECKSUMS:
+  HDAugmentedReality: ff518e9c08704261b4226ffa820464aa5a9b1626
+  lottie-ios: 106e92eaf11fbed0a76590b4cdb9b5ec26123ff7
+
+PODFILE CHECKSUM: 2c83b1f702d8bec91f7ebe14c2a3eb6b104cd116
+
+COCOAPODS: 1.10.1
