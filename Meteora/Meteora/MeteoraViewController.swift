@@ -139,3 +139,17 @@ extension MeteoraViewController: PandaAnnotationViewDelegate {
     presentedViewController?.present(vc, animated: false, completion: nil)
   }
 }
+
+extension MeteoraViewController: VendorPopupViewDelegate {
+  func onButtonPrimaryTapped() {
+
+  }
+
+  func onButtonSecondaryTapped() {
+
+  }
+
+  func onCloseButtonTapped() {
+
+  }
+}

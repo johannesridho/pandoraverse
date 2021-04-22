@@ -16,6 +16,7 @@ class VendorPopupViewController: UIViewController {
     vendorPopupView.setup(with: viewModel!)
     vendorPopupView.layer.cornerRadius = 8
     vendorPopupView.layer.masksToBounds = true
+    vendorPopupView.delegate = self
   }
 
   public init(viewModel: VendorPopupViewModel) {
@@ -28,5 +29,19 @@ class VendorPopupViewController: UIViewController {
   }
 
   private func setUpConstraints() {
+  }
+}
+
+extension VendorPopupViewController: VendorPopupViewDelegate {
+  func onButtonPrimaryTapped() {
+
+  }
+
+  func onButtonSecondaryTapped() {
+
+  }
+
+  func onCloseButtonTapped() {
+    self.dismiss(animated: true, completion: nil)
   }
 }

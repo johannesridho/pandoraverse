@@ -17,6 +17,12 @@ struct VendorPopupViewModel {
   let activeDeals: String
 }
 
+protocol VendorPopupViewDelegate: AnyObject {
+  func onCloseButtonTapped()
+  func onButtonSecondaryTapped()
+  func onButtonPrimaryTapped()
+}
+
 class VendorPopupView: UIView {
   @IBOutlet var contentView: UIView!
   @IBOutlet weak var closeButton: UIButton!
@@ -31,6 +37,8 @@ class VendorPopupView: UIView {
   @IBOutlet weak var activeDealsDescriptionLabel: UILabel!
   @IBOutlet weak var buttonSecondary: UIButton!
   @IBOutlet weak var buttonPrimary: UIButton!
+
+  weak var delegate: VendorPopupViewDelegate?
 
   let titleColor = UIColor(red: 0.20, green: 0.20, blue: 0.20, alpha: 1.00)
   let subtitleColor = UIColor(red: 0.44, green: 0.44, blue: 0.44, alpha: 1.00)
@@ -59,6 +67,8 @@ class VendorPopupView: UIView {
     closeButton.setImage(UIImage(named: "close-button")?.withRenderingMode(.alwaysOriginal), for: .normal)
     closeButton.setTitle(nil, for: .normal)
     closeButton.titleLabel?.isHidden = true
+    closeButton.addTarget(self, action: #selector(buttonClosedTapped), for: .touchUpInside)
+
     labelPopupTitle.text = "Vendor info"
     labelPopupTitle.font = UIFont.boldSystemFont(ofSize: 16)
     labelPopupTitle.textColor = titleColor
@@ -73,11 +83,26 @@ class VendorPopupView: UIView {
     buttonSecondary.backgroundColor = .white
     buttonSecondary.setTitle("Navigate", for: .normal)
     buttonSecondary.setTitleColor(primaryColor, for: .normal)
+    buttonSecondary.addTarget(self, action: #selector(buttonSecondaryTapped), for: .touchUpInside)
+
     buttonPrimary.layer.cornerRadius = 8
     buttonPrimary.layer.masksToBounds = true
     buttonPrimary.backgroundColor = primaryColor
     buttonPrimary.setTitle("More Details", for: .normal)
     buttonPrimary.setTitleColor(.white, for: .normal)
+    buttonPrimary.addTarget(self, action: #selector(buttonPrimaryTapped), for: .touchUpInside)
+  }
+
+  @objc func buttonPrimaryTapped() {
+    delegate?.onButtonPrimaryTapped()
+  }
+
+  @objc func buttonSecondaryTapped() {
+    delegate?.onButtonSecondaryTapped()
+  }
+
+  @objc func buttonClosedTapped() {
+    delegate?.onCloseButtonTapped()
   }
 
   func setup(with viewModel: VendorPopupViewModel) {
