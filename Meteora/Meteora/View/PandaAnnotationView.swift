@@ -25,8 +25,8 @@ open class PandaAnnotationView: ARAnnotationView, UIGestureRecognizerDelegate {
 
   @IBOutlet weak var ratingView: UIView!
   @IBOutlet weak var discountView: UIView!
-  @IBOutlet var iconImageView: UIImageView?
-  @IBOutlet var titleLabel: UILabel?
+  @IBOutlet var iconImageView: UIImageView!
+  @IBOutlet var titleLabel: UILabel!
   @IBOutlet weak var discountLabel: UILabel!
   @IBOutlet weak var distanceLabel: UILabel!
   @IBOutlet weak var ratingLabel: UILabel!
@@ -47,6 +47,9 @@ open class PandaAnnotationView: ARAnnotationView, UIGestureRecognizerDelegate {
     inforContainer.layer.cornerRadius = trailingCornerRadius
     inforContainer.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
 
+    iconImageView.layer.cornerRadius = expectedHeight/2
+    iconImageView.clipsToBounds = true
+
     discountView.clipsToBounds = true
     discountView.layer.cornerRadius = 2
 
@@ -54,12 +57,6 @@ open class PandaAnnotationView: ARAnnotationView, UIGestureRecognizerDelegate {
     addGestureRecognizer(tapRecognizer)
 
     bindAnnotation()
-  }
-
-  override open func didMoveToSuperview() {
-    super.didMoveToSuperview()
-    if superview != nil { startRotating() }
-    else { stopRotating() }
   }
 
   func bindAnnotation() {
