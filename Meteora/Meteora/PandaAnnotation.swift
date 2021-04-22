@@ -11,7 +11,7 @@ import UIKit
 
 class PandaAnnotation: ARAnnotation, RadarAnnotation {
   let defaultVendorImag = UIImage(named: "circlepanda")
-  private var annotation: Annotation
+  var annotation: Annotation
   private let altitudeDelta: Double = 0
 
   public init?(annotation: Annotation) {

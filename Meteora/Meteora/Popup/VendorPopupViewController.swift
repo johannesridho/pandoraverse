@@ -38,7 +38,7 @@ extension VendorPopupViewController: VendorPopupViewDelegate {
   }
 
   func onButtonSecondaryTapped() {
-
+    self.dismiss(animated: true, completion: nil)
   }
 
   func onCloseButtonTapped() {

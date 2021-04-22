@@ -132,8 +132,8 @@ extension MeteoraViewController: ARDataSource {
 }
 
 extension MeteoraViewController: PandaAnnotationViewDelegate {
-  func onTapped() {
-    let vc = VendorPopupViewController(viewModel: VendorPopupViewModel(vendorId: "1", vendorName: "asd", vendorImageUrl: "https://cna-sg-res.cloudinary.com/image/upload/q_auto,f_auto/image/7532680/16x9/991/557/ba8499a09032ed6ed3b2b8fa93fd685c/Qk/file-mcdonalds-singapore---3419228.jpg", rating: 12, vendorDescription: "asdads", activeDeals: "sadasd"))
+  func onTapped(annotation: Annotation) {
+    let vc = VendorPopupViewController(viewModel: annotation.mapToViewModel())
     vc.modalPresentationStyle = .overCurrentContext
     presentedViewController?.present(vc, animated: false, completion: nil)
   }

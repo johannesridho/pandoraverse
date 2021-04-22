@@ -74,7 +74,7 @@ extension Repository {
     var annotationModels = fetchLocalAnnotationModels()
     if annotationModels.count == 0 {
       annotationModels.append(
-        Annotation(vendor: "Empty", image: "", discount: 0, rating: 0, lat: 0, long: 0)
+        Annotation(vendor: "Empty", vendorDescription: "", image: "", discount: 0, discountDescription: "", rating: 0, lat: 0, long: 0)
       )
     }
 

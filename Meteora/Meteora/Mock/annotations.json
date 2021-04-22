@@ -2,20 +2,26 @@
   "annotations": [
     {
       "vendor": "restaurant large long long long long long long",
+      "vendor_description": "$$$ - Vietnamese, Halal",
       "image": "large_pin",
       "rating": 4.0,
-      "discount": 0.2
+      "discount": 0.2,
+      "discount_description": "minimum order of $30"
     },
     {
       "vendor": "restaurant small",
+      "vendor_description": "$$$ - Vietnamese, Halal",
       "image": "small_pin",
       "rating": 2.0,
-      "discount": 0.2
+      "discount": 0.2,
+      "discount_description": "minimum order of $30"
     },
     {
       "vendor": "short",
+      "vendor_description": "$$$ - Vietnamese, Halal",
       "rating": 3.5,
-      "discount": 0.2
+      "discount": 0.2,
+      "discount_description": "minimum order of $30"
     }
   ]
 }
