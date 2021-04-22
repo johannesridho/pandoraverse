@@ -10,6 +10,10 @@
 		0B31A7E5D655C7F6CF80EAE3 /* Pods_Meteora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28A53CD7B67B64EFCC3E0B33 /* Pods_Meteora.framework */; };
 		58A38D7BCB340F11D88141DD /* Pods_MeteoraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52266736547D9F581426911E /* Pods_MeteoraTests.framework */; };
 		7A0FCB70A826862B88662D29 /* Pods_Meteora_MeteoraUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4350494392017603608BD7F /* Pods_Meteora_MeteoraUITests.framework */; };
+		AF7151E0263133DD0016F9ED /* VendorPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF7151DF263133DD0016F9ED /* VendorPopupView.xib */; };
+		AF7151E5263139FB0016F9ED /* VendorPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7151E4263139FB0016F9ED /* VendorPopupView.swift */; };
+		AF7151EB263140420016F9ED /* VendorPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF7151E9263140420016F9ED /* VendorPopupViewController.swift */; };
+		AF7151EC263140420016F9ED /* VendorPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF7151EA263140420016F9ED /* VendorPopupViewController.xib */; };
 		BFEA9B142630EF81002434E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA9B132630EF81002434E9 /* AppDelegate.swift */; };
 		BFEA9B162630EF81002434E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA9B152630EF81002434E9 /* SceneDelegate.swift */; };
 		BFEA9B182630EF81002434E9 /* MeteoraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA9B172630EF81002434E9 /* MeteoraViewController.swift */; };
@@ -58,6 +62,10 @@
 		31BA7AA1F8CE2C57C5F463A8 /* Pods-MeteoraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeteoraTests.release.xcconfig"; path = "Target Support Files/Pods-MeteoraTests/Pods-MeteoraTests.release.xcconfig"; sourceTree = "<group>"; };
 		52266736547D9F581426911E /* Pods_MeteoraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeteoraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		633E1E107CBBCA3F41C926D8 /* Pods-Meteora-MeteoraUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meteora-MeteoraUITests.release.xcconfig"; path = "Target Support Files/Pods-Meteora-MeteoraUITests/Pods-Meteora-MeteoraUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AF7151DF263133DD0016F9ED /* VendorPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VendorPopupView.xib; sourceTree = "<group>"; };
+		AF7151E4263139FB0016F9ED /* VendorPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorPopupView.swift; sourceTree = "<group>"; };
+		AF7151E9263140420016F9ED /* VendorPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorPopupViewController.swift; sourceTree = "<group>"; };
+		AF7151EA263140420016F9ED /* VendorPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VendorPopupViewController.xib; sourceTree = "<group>"; };
 		B4326837DAA90A35FD2A841C /* Pods-Meteora.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meteora.debug.xcconfig"; path = "Target Support Files/Pods-Meteora/Pods-Meteora.debug.xcconfig"; sourceTree = "<group>"; };
 		BF889DB1E42F71A00A005EC2 /* Pods-Meteora.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meteora.release.xcconfig"; path = "Target Support Files/Pods-Meteora/Pods-Meteora.release.xcconfig"; sourceTree = "<group>"; };
 		BFEA9B102630EF81002434E9 /* Meteora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meteora.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +143,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AF7151DE263133C40016F9ED /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				AF7151DF263133DD0016F9ED /* VendorPopupView.xib */,
+				AF7151E4263139FB0016F9ED /* VendorPopupView.swift */,
+				AF7151E9263140420016F9ED /* VendorPopupViewController.swift */,
+				AF7151EA263140420016F9ED /* VendorPopupViewController.xib */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
 		BFEA9B072630EF81002434E9 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +179,7 @@
 		BFEA9B122630EF81002434E9 /* Meteora */ = {
 			isa = PBXGroup;
 			children = (
+				AF7151DE263133C40016F9ED /* Popup */,
 				BFEA9B132630EF81002434E9 /* AppDelegate.swift */,
 				BFEA9B152630EF81002434E9 /* SceneDelegate.swift */,
 				BFEA9B172630EF81002434E9 /* MeteoraViewController.swift */,
@@ -354,8 +374,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFEA9B202630EF82002434E9 /* LaunchScreen.storyboard in Resources */,
+				AF7151E0263133DD0016F9ED /* VendorPopupView.xib in Resources */,
 				BFEA9B1D2630EF82002434E9 /* Assets.xcassets in Resources */,
 				BFEA9BA226311986002434E9 /* annotations.json in Resources */,
+				AF7151EC263140420016F9ED /* VendorPopupViewController.xib in Resources */,
 				BFEA9B1B2630EF81002434E9 /* Main.storyboard in Resources */,
 				BFEA9B6926310E4A002434E9 /* Test.storyboard in Resources */,
 			);
@@ -488,6 +510,7 @@
 				BFEA9B602630F741002434E9 /* TestAnnotation.swift in Sources */,
 				BFEA9B182630EF81002434E9 /* MeteoraViewController.swift in Sources */,
 				BFEA9B5B2630F4D1002434E9 /* TestAnnotationView.swift in Sources */,
+				AF7151E5263139FB0016F9ED /* VendorPopupView.swift in Sources */,
 				BFEA9B142630EF81002434E9 /* AppDelegate.swift in Sources */,
 				BFEA9B982631119C002434E9 /* PandaAnnotationView.swift in Sources */,
 				BFEA9B8F2631115E002434E9 /* PandaAnnotation.swift in Sources */,
@@ -497,6 +520,7 @@
 				BFEA9B6E26310E52002434E9 /* StackTestViewController.swift in Sources */,
 				BFEA9BB326311A32002434E9 /* PandaAnnotationViewModel.swift in Sources */,
 				BFEA9BB926311AA9002434E9 /* Repository.swift in Sources */,
+				AF7151EB263140420016F9ED /* VendorPopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
