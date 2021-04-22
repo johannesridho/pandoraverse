@@ -1,17 +1,21 @@
 {
   "annotations": [
     {
-      "name": "restaurant name",
-      "lat": 1.123,
-      "long": 103.332,
-      "rating": 4,
-      "discount": "10%",
-    }, {
-      "name": "restaurant 2",
-      "lat": 1.223,
-      "long": 103.432,
-      "rating": 3,
-      "discount": "40%",
+      "vendor": "restaurant large",
+      "image": "large_pin",
+      "rating": 4.0,
+      "discount": 0.2
+    },
+    {
+      "vendor": "restaurant small",
+      "image": "small_pin",
+      "rating": 2.0,
+      "discount": 0.2
+    },
+    {
+      "vendor": "restaurant default",
+      "rating": 3.5,
+      "discount": 0.2
     }
   ]
 }

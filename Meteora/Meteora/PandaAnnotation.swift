@@ -10,46 +10,34 @@ import HDAugmentedReality
 import UIKit
 
 class PandaAnnotation: ARAnnotation, RadarAnnotation {
-    private(set) var type: PandaAnnotationType
-    private var annotation: Annotation
-    private let altitudeDelta: Double = 0
+  let defaultVendorImag = UIImage(named: "circlepanda")
+  private var annotation: Annotation
+  private let altitudeDelta: Double = 0
 
-    public init?(
-        annotation: Annotation,
-        type: PandaAnnotationType = .default
-    ) {
-        self.type = type
-        self.annotation = annotation
+  public init?(annotation: Annotation) {
+    self.annotation = annotation
 
-        let location = CLLocation(
-            coordinate: CLLocationCoordinate2D(latitude: annotation.lat, longitude: annotation.long),
-            altitude: altitudeDelta * drand48(), // TODO: check again
-            horizontalAccuracy: 1,
-            verticalAccuracy: 1,
-            course: 0,
-            speed: 0,
-            timestamp: Date()
-        )
-        super.init(identifier: nil, title: annotation.name, location: location)
-    }
+    let location = CLLocation(
+      coordinate: CLLocationCoordinate2D(latitude: annotation.lat ?? 0, longitude: annotation.long ?? 0),
+      altitude: altitudeDelta * drand48(), // TODO: check again
+      horizontalAccuracy: 1,
+      verticalAccuracy: 1,
+      course: 0,
+      speed: 0,
+      timestamp: Date()
+    )
+    super.init(identifier: nil, title: annotation.vendor, location: location)
+  }
 
-    public var radarAnnotationTintColor: UIColor? {
-        return type.tintColor
-    }
-}
+  var vendor: String? {
+    annotation.vendor
+  }
 
-enum PandaAnnotationType: CaseIterable {
-    case `default`
+  var image: UIImage? {
+    UIImage(named: annotation.image ?? "circlepanda")
+  }
 
-    var icon: UIImage? {
-        UIImage(named: "circlepanda")
-    }
-
-    var title: String {
-        "Panda"
-    }
-
-    var tintColor: UIColor {
-        .clear
-    }
+  var discount: Double? {
+    annotation.discount
+  }
 }

@@ -20,7 +20,7 @@ class MeteoraViewController: UIViewController {
   }
 
   func showARViewController() {
-    arViewController.setAnnotations(Repository.shared.fetchAnnotation())
+    arViewController.setAnnotations(Repository.shared.fetchAnnotations())
     arViewController.modalPresentationStyle = .fullScreen
     //    addRadarMapView(to: arViewController)
     present(arViewController, animated: true, completion: nil)

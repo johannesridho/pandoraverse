@@ -7,10 +7,15 @@
 
 import Foundation
 
+struct Annotations: Codable {
+  var annotations: [Annotation]
+}
+
 struct Annotation: Codable {
-    var name: String
-    var lat: Double
-    var long: Double
-    var rating: Double
-    var discount: Double
+  var vendor: String
+  var image: String?
+  var discount: Double?
+  var rating: Double?
+  var lat: Double?
+  var long: Double?
 }
